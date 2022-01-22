@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// /postにGETリクエストが来たらPostControllerのindexメソッドを実行する。
+Route::get('/posts', 'PostController@index');
