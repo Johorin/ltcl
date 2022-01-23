@@ -16,6 +16,9 @@ class PostController extends Controller
 	*      *      */
 	public function index(Post $post)
 	{
-		            return $post->get();
+		            // return $post->get();
+		            //withメソッドでviewに変数を渡すことができる。
+		            //with(['変数名' => 変数に渡す内容]);とすることでviewの指定したbladeファイル側で変数$postsが使用できるようになる。
+		            return view('posts/index')->with(['posts' => $post->getPaginateByLimit(1)]);
 	}
 }
