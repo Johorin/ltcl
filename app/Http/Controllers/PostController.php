@@ -21,4 +21,14 @@ class PostController extends Controller
 		            //with(['変数名' => 変数に渡す内容]);とすることでviewの指定したbladeファイル側で変数$postsが使用できるようになる。
 		            return view('posts/index')->with(['posts' => $post->getPaginateByLimit(1)]);
 	}
+	/**
+	 * 特定IDのpostを表示する
+	 *
+	 * @params Object Post // 引数の$postはid=1のPostインスタンス
+	 * @return Reposnse post view
+	 */
+	public function show(Post $post)
+	{
+	    return view('posts/show')->with(['post' => $post]);
+	}
 }
