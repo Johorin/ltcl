@@ -11,5 +11,11 @@
 |
 */
 
-// /postにGETリクエストが来たらPostControllerのindexメソッドを実行する。
-Route::get('/posts', 'PostController@index');
+// 任意のリクエスト「/」から実行するメソッドの記述
+// resorces/views/に置かれたView用の.blade.phpファイルが参照される。
+// Route::get('/', function(){
+//   return view('posts/index'); 
+// });
+Route::get('/', 'PostController@index');
+
+Route::get('/posts/{post}', 'PostController@show');
