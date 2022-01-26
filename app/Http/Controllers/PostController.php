@@ -19,7 +19,8 @@ class PostController extends Controller
 		            // return $post->get();
 		            //withメソッドでviewに変数を渡すことができる。
 		            //with(['変数名' => 変数に渡す内容]);とすることでviewの指定したbladeファイル側で変数$postsが使用できるようになる。
-		            return view('posts/index')->with(['posts' => $post->getPaginateByLimit(1)]);
+		            //return view('posts/index')->with(['posts' => $post->getPaginateByLimit(1)]);
+		            print_r($post);
 	}
 	/**
 	 * 特定IDのpostを表示する
@@ -29,6 +30,7 @@ class PostController extends Controller
 	 */
 	public function show(Post $post)
 	{
-	    return view('posts/show')->with(['post' => $post]);
+	    //return view('posts/show')->with(['post' => $post]);
+	    dd($post);
 	}
 }
