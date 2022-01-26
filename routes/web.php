@@ -11,5 +11,15 @@
 |
 */
 
-// /postにGETリクエストが来たらPostControllerのindexメソッドを実行する。
-Route::get('/posts', 'PostController@index');
+Route::get('/', 'PostController@index');
+
+// /postsにGETリクエストが来たらPostControllerのindexメソッドを実行する。
+//Route::get('/posts', 'PostController@index');
+
+// /posts/createにGETリクエストが来たらPostControllerのcreateメソッドを実行する。
+Route::get('/posts/create', 'PostController@create');
+
+Route::get('/posts/{post}', 'PostController@show');
+
+// /postsにPOSTリクエストが来たらPostControllerのstoreメソッドを実行する。
+Route::post('/posts', 'PostController@store');
