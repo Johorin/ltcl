@@ -16,6 +16,11 @@
                 </h2>
                 <p class='body'>{{ $post->body }}</p>
             </div>
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit" onclick="return deleteActivate()">delete</button> 
+            </form>
             @endforeach
         </div>
         <div class='paginate'>
@@ -23,4 +28,15 @@
         </div>
         [<a href='/posts/create'>create</a>]
     </body>
+    <script>
+        'use strict';
+        
+        function deleteActivate() {
+            if (window.confirm('本当にこの投稿を削除しますか？')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
 </html>
