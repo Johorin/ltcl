@@ -23,3 +23,9 @@ Route::get('/posts/{post}', 'PostController@show');
 
 // /postsにPOSTリクエストが来たらPostControllerのstoreメソッドを実行する。
 Route::post('/posts', 'PostController@store');
+
+// ブログ投稿編集画面表示
+Route::get('/posts/{post}/edit', 'PostController@edit');
+
+// ブログ投稿編集実行
+Route::put('/posts/{post}', 'PostController@update');
