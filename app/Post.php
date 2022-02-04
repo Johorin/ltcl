@@ -26,10 +26,11 @@ class Post extends Model
         'body',
         'category_id'
     ];
-    
+  
     //Categoryに対するリレーション
+    //categoryテーブルのレコードに対してただ一つのリレーションを持つ
     
-    //「1対多」の関係なので単数系に
+    //「1対多」の関係なのでと単数形に
     public function category()
     {
         return $this->belongsTo('App\Category');
