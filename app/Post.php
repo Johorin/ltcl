@@ -26,4 +26,13 @@ class Post extends Model
         'title',
         'body',
     ];
+    
+    //Categoryに対するリレーション
+    //categoryテーブルのレコードに対してただ一つのリレーションを持つ
+    
+    //「1対多」の関係なのでと単数形に
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }
