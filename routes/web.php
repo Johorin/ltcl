@@ -32,3 +32,5 @@ Route::put('/posts/{post}', 'PostController@update');
 
 //ブログ投稿削除実行用ルーティング
 Route::delete('/posts/{post}', 'PostController@delete');
+
+Route::get('/categories/{category}', 'CategoryController@index');

@@ -13,4 +13,9 @@ class Category extends Model
     {
         return $this->hasMany('App\Post');
     }
+    //カテゴリーごとに属する投稿を取得する処理を追加
+    public function getByCategory(int $limit_count = 5)
+    {
+        return $this->posts()->with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }
